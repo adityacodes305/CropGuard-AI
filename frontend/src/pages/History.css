@@ -1,0 +1,1025 @@
+/* =========================================================
+   CROP GUARD AI - HISTORY PAGE
+   ========================================================= */
+
+.history-page {
+    min-height: 100vh;
+    background: #f5f9f7;
+    padding: 42px 3.5% 70px;
+    color: #142b22;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.history-header {
+    max-width: 1500px;
+    margin: 0 auto 38px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.history-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: #25844d;
+    margin-bottom: 8px;
+}
+
+.history-header h1 {
+    margin: 0;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    font-weight: 750;
+    letter-spacing: -1.5px;
+}
+
+.history-header p {
+    margin: 13px 0 0;
+    color: #71827b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.new-analysis-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 165px;
+    padding: 15px 21px;
+    border-radius: 11px;
+    background: #218449;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+    box-shadow: 0 5px 15px rgba(33, 132, 73, 0.14);
+}
+
+.new-analysis-btn span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.new-analysis-btn:hover {
+    background: #196f3c;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.history-stats {
+    max-width: 1500px;
+    margin: 0 auto 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.history-stat-card {
+    min-height: 130px;
+    padding: 22px 24px;
+    background: white;
+    border: 1px solid #dfe9e4;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 7px 24px rgba(24, 60, 43, 0.035);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.scan-icon {
+    background: #edf8f1;
+    color: #178043;
+}
+
+.healthy-icon {
+    background: #eaf8ef;
+    color: #168247;
+}
+
+.disease-icon {
+    background: #fff0f0;
+    color: #df5656;
+}
+
+.confidence-icon {
+    background: #eef5fc;
+    color: #2573a8;
+}
+
+.history-stat-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.history-stat-card span {
+    color: #6e7d76;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.history-stat-card strong {
+    margin-top: 4px;
+    color: #142b22;
+    font-size: 29px;
+    line-height: 1.1;
+}
+
+.history-stat-card small {
+    margin-top: 5px;
+    color: #a1ada8;
+    font-size: 12px;
+}
+
+/* =========================================================
+   PREDICTIONS SECTION
+   ========================================================= */
+
+.predictions-section {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.predictions-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.predictions-header h2 {
+    margin: 0;
+    font-size: 29px;
+    letter-spacing: -0.7px;
+}
+
+.predictions-header p {
+    margin: 6px 0 0;
+    color: #71827b;
+    font-size: 14px;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.history-search {
+    position: relative;
+    width: min(410px, 100%);
+}
+
+.history-search > span {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6e8279;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.history-search input {
+    width: 100%;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 0 48px 0 47px;
+    border: 1px solid #dbe6e1;
+    border-radius: 13px;
+    background: white;
+    color: #173127;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.history-search input::placeholder {
+    color: #9ba8a3;
+}
+
+.history-search input:focus {
+    border-color: #23854c;
+    box-shadow: 0 0 0 3px rgba(35, 133, 76, 0.08);
+}
+
+.search-clear {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: #eef4f1;
+    color: #62756d;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.search-clear:hover {
+    background: #e2ebe6;
+}
+
+/* =========================================================
+   STATUS FILTERS
+   ========================================================= */
+
+.history-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 27px;
+}
+
+.history-filters button {
+    min-height: 46px;
+    padding: 0 17px;
+    border: 1px solid #dce7e2;
+    border-radius: 11px;
+    background: white;
+    color: #53665e;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.history-filters button:hover {
+    border-color: #9bc7ad;
+    color: #247c48;
+}
+
+.history-filters button.active {
+    background: #218449;
+    border-color: #218449;
+    color: white;
+}
+
+.history-filters button span {
+    min-width: 25px;
+    height: 25px;
+    padding: 0 7px;
+    border-radius: 50%;
+    background: #eef3f0;
+    color: #60736b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.history-filters button.active span {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+}
+
+/* =========================================================
+   ADVANCED FILTERS
+   ========================================================= */
+
+.advanced-filters {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 27px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    padding-left: 2px;
+    color: #62746c;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.filter-group select {
+    width: 190px;
+    height: 45px;
+    padding: 0 35px 0 14px;
+    border: 1px solid #d9e5df;
+    border-radius: 10px;
+    background: white;
+    color: #263b33;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: #24864d;
+    box-shadow: 0 0 0 3px rgba(36, 134, 77, 0.07);
+}
+
+.clear-filters-btn {
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #f0caca;
+    border-radius: 10px;
+    background: white;
+    color: #d85b5b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.clear-filters-btn.visible:hover {
+    background: #fff2f2;
+    border-color: #e7aaaa;
+}
+
+.clear-filters-btn:not(.visible) {
+    opacity: 0.45;
+    cursor: default;
+}
+
+/* =========================================================
+   PREDICTION LIST
+   ========================================================= */
+
+.prediction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prediction-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #dce8e2;
+    border-radius: 17px;
+    box-shadow: 0 7px 24px rgba(24, 60, 43, 0.035);
+    transition: 0.2s ease;
+}
+
+.prediction-card:hover {
+    border-color: #c9ded3;
+    box-shadow: 0 10px 28px rgba(24, 60, 43, 0.055);
+}
+
+.prediction-card.expanded {
+    border-color: #bcd9ca;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.prediction-main {
+    min-height: 165px;
+    padding: 26px 30px;
+    display: grid;
+    grid-template-columns: 105px minmax(180px, 1.4fr) 180px 150px 180px;
+    align-items: center;
+    gap: 25px;
+}
+
+.crop-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.healthy-bg {
+    background: #edf8f1;
+}
+
+.disease-bg {
+    background: #fff0f0;
+}
+
+.prediction-info {
+    min-width: 0;
+}
+
+.prediction-info h3 {
+    margin: 0;
+    color: #142b22;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.prediction-info p {
+    margin: 6px 0 13px;
+    color: #81908a;
+    font-size: 14px;
+}
+
+.prediction-date {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    color: #96a29e;
+    font-size: 12px;
+}
+
+.prediction-date span:first-child {
+    color: #20834a;
+    font-weight: 750;
+    letter-spacing: 0.5px;
+}
+
+.date-dot {
+    color: #b7c1bd;
+}
+
+/* =========================================================
+   CONFIDENCE
+   ========================================================= */
+
+.prediction-confidence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.prediction-confidence > span {
+    color: #718079;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.prediction-confidence strong {
+    color: #1b3228;
+    font-size: 15px;
+}
+
+.confidence-bar {
+    width: 135px;
+    height: 8px;
+    border-radius: 20px;
+    background: #e7efeb;
+    overflow: hidden;
+}
+
+.confidence-bar div {
+    height: 100%;
+    border-radius: inherit;
+    background: #249052;
+    transition: width 0.4s ease;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.prediction-status {
+    display: flex;
+    justify-content: center;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 13px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-healthy {
+    background: #eaf8ef;
+    color: #187a43;
+}
+
+.status-disease {
+    background: #fff0f0;
+    color: #cf5050;
+}
+
+.status-dot {
+    font-size: 8px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.history-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 180px;
+}
+
+.details-btn,
+.quick-info-btn,
+.delete-history-btn {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.details-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid #cfe2d8;
+    background: white;
+    color: #16773f;
+}
+
+.details-btn span {
+    font-size: 17px;
+}
+
+.details-btn:hover {
+    background: #f2faf5;
+    border-color: #94c5a7;
+}
+
+.quick-info-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid #dce7e2;
+    background: #f9fbfa;
+    color: #53675e;
+}
+
+.quick-info-btn:hover {
+    background: #f0f6f3;
+    border-color: #bfd4c9;
+}
+
+.delete-history-btn {
+    border: 1px solid #efc4c4;
+    background: #fff7f7;
+    color: #d45151;
+}
+
+.delete-history-btn:hover {
+    background: #dc5c5c;
+    border-color: #dc5c5c;
+    color: white;
+}
+
+.delete-history-btn:active,
+.details-btn:active,
+.quick-info-btn:active {
+    transform: scale(0.98);
+}
+
+/* =========================================================
+   QUICK INFO DETAILS
+   ========================================================= */
+
+.prediction-details {
+    padding: 0 30px 27px;
+    animation: detailsOpen 0.2s ease;
+}
+
+@keyframes detailsOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-divider {
+    height: 1px;
+    background: #e8efeb;
+    margin-bottom: 23px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.detail-box {
+    padding: 16px;
+    border: 1px solid #e2ebe6;
+    border-radius: 11px;
+    background: #f9fbfa;
+}
+
+.detail-box span {
+    display: block;
+    margin-bottom: 7px;
+    color: #82918b;
+    font-size: 11px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.detail-box strong {
+    color: #243a31;
+    font-size: 14px;
+}
+
+.detail-healthy {
+    color: #218449 !important;
+}
+
+.detail-disease {
+    color: #d25252 !important;
+}
+
+/* =========================================================
+   TREATMENT
+   ========================================================= */
+
+.treatment-box {
+    margin-top: 14px;
+    padding: 17px 19px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    border: 1px solid #f0dddd;
+    border-radius: 12px;
+    background: #fff8f8;
+}
+
+.treatment-box.healthy-treatment {
+    border-color: #dcece2;
+    background: #f5fbf7;
+}
+
+.treatment-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #f8e5e5;
+    color: #d35454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.healthy-treatment .treatment-icon {
+    background: #e2f3e8;
+    color: #25854d;
+}
+
+.treatment-box span {
+    display: block;
+    margin-bottom: 5px;
+    color: #7d8c85;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.treatment-box p {
+    margin: 0;
+    color: #4c6057;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-history {
+    min-height: 270px;
+    padding: 40px;
+    background: white;
+    border: 1px solid #dce8e2;
+    border-radius: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: #edf5f1;
+    color: #628076;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.empty-history h3 {
+    margin: 0;
+    color: #253c32;
+    font-size: 19px;
+}
+
+.empty-history p {
+    max-width: 400px;
+    margin: 8px 0 17px;
+    color: #82908b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.empty-clear-btn {
+    padding: 10px 17px;
+    border: 1px solid #c8ddd0;
+    border-radius: 9px;
+    background: #f4faf6;
+    color: #237b48;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.empty-clear-btn:hover {
+    background: #e8f5ed;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.history-loading {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #dfece5;
+    border-top-color: #24864d;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.history-loading h2 {
+    margin: 0;
+    color: #1a3328;
+    font-size: 21px;
+}
+
+.history-loading p {
+    margin-top: 8px;
+    color: #82918a;
+    font-size: 14px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .history-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prediction-main {
+        grid-template-columns:
+            90px
+            minmax(180px, 1fr)
+            150px
+            150px;
+        gap: 20px;
+    }
+
+    .history-card-actions {
+        grid-column: 2 / -1;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .history-card-actions button {
+        flex: 1;
+    }
+
+    .prediction-confidence {
+        align-items: flex-start;
+    }
+
+    .prediction-status {
+        justify-content: flex-start;
+    }
+
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .history-page {
+        padding: 28px 18px 55px;
+    }
+
+    .history-header {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 30px;
+    }
+
+    .history-header h1 {
+        font-size: 34px;
+    }
+
+    .new-analysis-btn {
+        width: fit-content;
+    }
+
+    .history-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 38px;
+    }
+
+    .history-stat-card {
+        min-height: 105px;
+    }
+
+    .predictions-header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .history-search {
+        width: 100%;
+    }
+
+    .history-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+    }
+
+    .history-filters button {
+        flex-shrink: 0;
+    }
+
+    .advanced-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+    }
+
+    .filter-group select {
+        width: 100%;
+    }
+
+    .clear-filters-btn {
+        width: 100%;
+    }
+
+    .prediction-main {
+        padding: 22px 18px;
+        grid-template-columns: 72px 1fr;
+        gap: 17px;
+    }
+
+    .crop-icon {
+        width: 68px;
+        height: 68px;
+        font-size: 34px;
+    }
+
+    .prediction-info {
+        align-self: center;
+    }
+
+    .prediction-confidence {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    .prediction-confidence .confidence-bar {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .prediction-status {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+
+    .history-card-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prediction-details {
+        padding: 0 18px 22px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .history-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .history-header h1 {
+        font-size: 30px;
+    }
+
+    .history-header p {
+        font-size: 13px;
+    }
+
+    .advanced-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .history-card-actions {
+        flex-direction: column;
+    }
+
+    .details-btn,
+    .quick-info-btn,
+    .delete-history-btn {
+        width: 100%;
+    }
+
+    .prediction-info h3 {
+        font-size: 16px;
+    }
+
+    .prediction-info p {
+        font-size: 13px;
+    }
+}

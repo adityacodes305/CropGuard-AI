@@ -1,0 +1,37 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --bg-color: #f7faf7;
+    --card-color: #ffffff;
+    --text-color: #1f2937;
+    --secondary-text: #6b7280;
+    --border-color: #e5e7eb;
+    --primary-color: #2e7d32;
+    --primary-hover: #256b2a;
+    --input-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+body {
+    min-width: 320px;
+}

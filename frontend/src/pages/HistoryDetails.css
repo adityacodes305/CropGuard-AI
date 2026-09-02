@@ -1,0 +1,935 @@
+/* =========================================================
+   CROP GUARD AI - HISTORY DETAILS
+   ========================================================= */
+
+.details-page {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 42px 32px 70px;
+    box-sizing: border-box;
+    color: #17251c;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.details-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+
+.details-header > div {
+    min-width: 0;
+}
+
+.details-label {
+    margin: 0 0 9px;
+    color: #217a43;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.details-header h1 {
+    margin: 0;
+    color: #17251c;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.details-header > div > p:last-child {
+    margin: 10px 0 0;
+    color: #708077;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+    flex-shrink: 0;
+    min-height: 46px;
+    padding: 0 19px;
+    border: 1px solid #d8e3dc;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #31513e;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-1px);
+    border-color: #9bc5aa;
+    background: #f7fbf8;
+    box-shadow: 0 5px 15px rgba(33, 122, 67, 0.08);
+}
+
+
+/* =========================================================
+   MAIN SUMMARY
+   ========================================================= */
+
+.details-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.details-card,
+.confidence-card {
+    min-width: 0;
+    border: 1px solid #e2ebe5;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(25, 60, 39, 0.045);
+}
+
+
+/* =========================================================
+   CROP CARD
+   ========================================================= */
+
+.details-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 190px;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.crop-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 82px;
+    height: 82px;
+    border-radius: 20px;
+    font-size: 38px;
+}
+
+.crop-icon.healthy-bg,
+.healthy-bg {
+    background: #edf8f0;
+}
+
+.crop-icon.disease-bg,
+.disease-bg {
+    background: #fff2ed;
+}
+
+.crop-info {
+    min-width: 0;
+}
+
+.small-label {
+    margin: 0 0 7px;
+    color: #87938b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.crop-info h2 {
+    margin: 0;
+    color: #1d2d23;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+.disease-name {
+    margin: 7px 0 13px;
+    color: #637168;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1;
+}
+
+.status.healthy {
+    color: #217a43;
+    background: #edf8f0;
+}
+
+.status.disease {
+    color: #c75a36;
+    background: #fff1eb;
+}
+
+
+/* =========================================================
+   CONFIDENCE CARD
+   ========================================================= */
+
+.confidence-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.confidence-card h2 {
+    margin: 0;
+    color: #217a43;
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.confidence-card > p:last-child {
+    margin: 11px 0 0;
+    color: #7b8880;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONFIDENCE BAR
+   ========================================================= */
+
+.confidence-bar {
+    width: 100%;
+    height: 9px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #eaf0ec;
+}
+
+.confidence-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: #217a43;
+    transition: width 0.7s ease;
+}
+
+
+/* =========================================================
+   ANALYZED IMAGE
+   ========================================================= */
+
+.prediction-image-card {
+    margin-bottom: 18px;
+    padding: 26px;
+    border: 1px solid #e2ebe5;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(25, 60, 39, 0.045);
+    box-sizing: border-box;
+}
+
+.image-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.image-card-header h2 {
+    margin: 0;
+    color: #1d2d23;
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.prediction-image {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f5f8f6;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+   ========================================================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.info-card {
+    min-width: 0;
+    min-height: 118px;
+    padding: 21px;
+    border: 1px solid #e2ebe5;
+    border-radius: 14px;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(25, 60, 39, 0.035);
+}
+
+.info-card h3 {
+    margin: 8px 0 0;
+    color: #26362c;
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.detail-healthy {
+    color: #217a43 !important;
+}
+
+.detail-disease {
+    color: #c75a36 !important;
+}
+
+
+/* =========================================================
+   CARE SECTION
+   ========================================================= */
+
+.care-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 34px;
+}
+
+.care-card {
+    position: relative;
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid #e1ebe4;
+    border-radius: 16px;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 7px 23px rgba(25, 60, 39, 0.04);
+    overflow: hidden;
+}
+
+.care-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #217a43;
+}
+
+.care-card h2 {
+    margin: 0 0 12px;
+    color: #213128;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 750;
+}
+
+.care-card p {
+    margin: 0;
+    color: #69776e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TOP PREDICTIONS
+   ========================================================= */
+
+.top-predictions {
+    margin-bottom: 34px;
+}
+
+.section-heading {
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #1c2d22;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 750;
+}
+
+.section-heading > div > p:last-child {
+    margin: 7px 0 0;
+    color: #7a877f;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PREDICTION LIST
+   ========================================================= */
+
+.prediction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prediction-row {
+    display: grid;
+    grid-template-columns: 55px minmax(180px, 1.5fr) minmax(160px, 1fr) minmax(120px, 0.65fr);
+    align-items: center;
+    gap: 18px;
+    min-height: 82px;
+    padding: 15px 19px;
+    border: 1px solid #e4ebe6;
+    border-radius: 13px;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.prediction-row:hover {
+    transform: translateY(-1px);
+    border-color: #cbded1;
+    box-shadow: 0 7px 20px rgba(25, 60, 39, 0.05);
+}
+
+.prediction-number {
+    color: #217a43;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.prediction-name {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 4px;
+}
+
+.prediction-name strong {
+    color: #24342a;
+    font-size: 14px;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+.prediction-name span {
+    color: #77847c;
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.prediction-status {
+    min-width: 0;
+}
+
+.prediction-confidence {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    min-width: 0;
+}
+
+.prediction-confidence strong {
+    color: #293a30;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   TOP PREDICTION CONFIDENCE BAR
+   ========================================================= */
+
+.top-confidence-bar {
+    width: 100%;
+    max-width: 125px;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e9efeb;
+}
+
+.top-confidence-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: #217a43;
+    transition: width 0.6s ease;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.details-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 4px;
+}
+
+.secondary-button,
+.primary-button {
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.secondary-button {
+    border: 1px solid #d7e2db;
+    background: #ffffff;
+    color: #365140;
+}
+
+.secondary-button:hover {
+    transform: translateY(-1px);
+    border-color: #a8c8b3;
+    background: #f7faf8;
+    box-shadow: 0 6px 15px rgba(25, 60, 39, 0.07);
+}
+
+.primary-button {
+    border: 1px solid #217a43;
+    background: #217a43;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(33, 122, 67, 0.14);
+}
+
+.primary-button:hover {
+    transform: translateY(-1px);
+    background: #1b6939;
+    box-shadow: 0 8px 20px rgba(33, 122, 67, 0.2);
+}
+
+
+/* =========================================================
+   LOADING / EMPTY STATE
+   ========================================================= */
+
+.details-empty {
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.details-empty h1 {
+    margin: 16px 0 7px;
+    color: #233329;
+    font-size: 27px;
+    font-weight: 750;
+}
+
+.details-empty p {
+    max-width: 430px;
+    margin: 0;
+    color: #7b8880;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.details-empty button {
+    margin-top: 22px;
+    min-height: 45px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #217a43;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.details-empty button:hover {
+    transform: translateY(-1px);
+    background: #1b6939;
+}
+
+.empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    background: #edf6ef;
+    font-size: 29px;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.loading-spinner {
+    width: 38px;
+    height: 38px;
+    border: 3px solid #e0ebe4;
+    border-top-color: #217a43;
+    border-radius: 50%;
+    animation: detailsSpin 0.8s linear infinite;
+}
+
+@keyframes detailsSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1050px
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .details-page {
+        padding: 36px 24px 60px;
+    }
+
+    .details-main {
+        grid-template-columns: 1fr;
+    }
+
+    .confidence-card {
+        min-height: 175px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .prediction-row {
+        grid-template-columns: 50px minmax(160px, 1.5fr) minmax(150px, 1fr) 110px;
+        gap: 14px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .details-page {
+        padding: 30px 18px 50px;
+    }
+
+    .details-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .details-header h1 {
+        font-size: 32px;
+    }
+
+    .back-button {
+        width: 100%;
+    }
+
+    .details-card {
+        padding: 23px;
+    }
+
+    .prediction-row {
+        grid-template-columns: 45px minmax(0, 1fr) minmax(130px, 0.7fr);
+    }
+
+    .prediction-status {
+        grid-column: 2;
+    }
+
+    .prediction-confidence {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+
+    .top-confidence-bar {
+        max-width: 105px;
+    }
+
+    .care-section {
+        grid-template-columns: 1fr;
+    }
+
+    .details-actions {
+        flex-direction: column-reverse;
+    }
+
+    .secondary-button,
+    .primary-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .details-page {
+        padding: 24px 14px 42px;
+    }
+
+    .details-header {
+        margin-bottom: 24px;
+    }
+
+    .details-label {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+    }
+
+    .details-header h1 {
+        font-size: 28px;
+        letter-spacing: -0.6px;
+    }
+
+    .details-header > div > p:last-child {
+        font-size: 13px;
+    }
+
+    .details-main {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .details-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .crop-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 16px;
+        font-size: 29px;
+    }
+
+    .crop-info h2 {
+        font-size: 23px;
+    }
+
+    .confidence-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .confidence-card h2 {
+        font-size: 31px;
+    }
+
+    .prediction-image-card {
+        padding: 18px;
+        margin-bottom: 12px;
+    }
+
+    .prediction-image {
+        max-height: 380px;
+        border-radius: 10px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .info-card {
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .care-section {
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .care-card {
+        padding: 20px;
+    }
+
+    .care-card h2 {
+        font-size: 16px;
+    }
+
+    .care-card p {
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .prediction-row {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 13px;
+        padding: 16px;
+    }
+
+    .prediction-number {
+        grid-row: 1 / span 2;
+    }
+
+    .prediction-name {
+        grid-column: 2;
+    }
+
+    .prediction-status {
+        grid-column: 2;
+    }
+
+    .prediction-confidence {
+        grid-column: 2;
+        grid-row: auto;
+        align-items: flex-start;
+        margin-top: 4px;
+    }
+
+    .top-confidence-bar {
+        max-width: 100%;
+    }
+
+    .status {
+        font-size: 11px;
+    }
+
+    .details-empty {
+        min-height: 400px;
+    }
+
+    .details-empty h1 {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .details-page {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .details-header h1 {
+        font-size: 25px;
+    }
+
+    .details-card,
+    .confidence-card {
+        padding: 17px;
+    }
+
+    .crop-info h2 {
+        font-size: 21px;
+    }
+
+    .prediction-image-card {
+        padding: 15px;
+    }
+
+    .info-card {
+        padding: 16px;
+    }
+
+    .care-card {
+        padding: 17px;
+    }
+
+    .prediction-row {
+        padding: 14px;
+    }
+}
+.delete-button {
+    background: #dc5c5c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-button:hover {
+    background: #c94c4c;
+}
+
+.delete-button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,800 @@
+/* =========================
+   DETECT PAGE
+========================= */
+
+.detect-page {
+    min-height: calc(100vh - 70px);
+    padding: 60px 20px;
+    background: #f6f8f5;
+}
+
+.detect-container {
+    width: min(900px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.detect-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detect-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.detect-header h1 {
+    margin: 18px 0 12px;
+    font-size: 42px;
+    color: #1b1f1c;
+    line-height: 1.15;
+}
+
+.detect-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #69736c;
+    font-size: 16px;
+}
+
+
+/* =========================
+   UPLOAD CARD
+========================= */
+
+.upload-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.upload-title {
+    margin-bottom: 22px;
+}
+
+.upload-title h2 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: #202520;
+}
+
+.upload-title p {
+    margin: 0;
+    color: #7a827c;
+    font-size: 14px;
+}
+
+
+/* =========================
+   DROP ZONE
+========================= */
+
+.drop-zone {
+    min-height: 330px;
+    border: 2px dashed #b8c8ba;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+
+    background: #fafcf9;
+    text-align: center;
+
+    padding: 30px;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-active {
+    border-color: #4caf50;
+    background: #f1f8f2;
+}
+
+.drop-zone:hover {
+    transform: translateY(-2px);
+}
+
+.drop-zone.drag-active {
+    transform: scale(1.01);
+}
+
+.upload-disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.upload-disabled:hover {
+    transform: none;
+    border-color: #b8c8ba;
+    background: #fafcf9;
+}
+
+
+/* =========================
+   UPLOAD ICON
+========================= */
+
+.upload-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    margin-bottom: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+.drop-zone:hover .upload-icon {
+    transform: translateY(-4px);
+}
+
+.drop-zone h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #252925;
+}
+
+.drop-zone p {
+    margin: 0 0 20px;
+    color: #7b847d;
+}
+
+.browse-button {
+    padding: 11px 22px;
+    border-radius: 8px;
+    background: #2e7d32;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.drop-zone:hover .browse-button {
+    background: #256b29;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview-section {
+    width: 100%;
+}
+
+.preview-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    background: #edf1ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   REMOVE IMAGE BUTTON
+========================= */
+
+.remove-image {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 1;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.remove-image:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.05);
+}
+
+.remove-image:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   AI ANALYZING OVERLAY
+========================= */
+
+.image-analyzing-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 35, 23, 0.68);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+
+    backdrop-filter: blur(2px);
+}
+
+.overlay-spinner {
+    width: 42px;
+    height: 42px;
+
+    border: 4px solid rgba(255, 255, 255, 0.35);
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+/* =========================
+   FILE INFORMATION
+========================= */
+
+.file-info {
+    margin-top: 16px;
+    padding: 14px 16px;
+
+    border-radius: 10px;
+    background: #f5f7f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.file-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.file-details strong {
+    color: #293029;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-details span {
+    color: #7a827c;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CHANGE IMAGE
+========================= */
+
+.change-image {
+    padding: 9px 14px;
+
+    border: 1px solid #c7d1c8;
+    border-radius: 8px;
+
+    background: white;
+    color: #2e7d32;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.change-image:hover {
+    background: #f1f8f2;
+    border-color: #2e7d32;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.detect-error {
+    margin-top: 18px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    background: #fff4f4;
+    border: 1px solid #f1c7c7;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #b42323;
+}
+
+.detect-error > span {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.detect-error p {
+    margin: 0;
+
+    flex: 1;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.detect-error button {
+    border: none;
+    background: transparent;
+
+    color: #a52a2a;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 2px 5px;
+}
+
+.detect-error button:hover {
+    color: #7e1d1d;
+}
+
+
+/* =========================
+   ANALYZE SECTION
+========================= */
+
+.analyze-section {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.analyze-button {
+    width: 100%;
+    max-width: 420px;
+    height: 54px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2e7d32;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.analyze-button:hover:not(:disabled) {
+    background: #256b29;
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(46, 125, 50, 0.18);
+}
+
+.analyze-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.analyze-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   MAIN SPINNER
+========================= */
+
+.spinner {
+    width: 19px;
+    height: 19px;
+
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   ANALYSIS STATUS
+========================= */
+
+.analyzing-text {
+    margin-top: 12px;
+
+    color: #6d766f;
+    font-size: 14px;
+}
+
+.analyzing-panel {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 18px auto 0;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    background: white;
+    border: 1px solid #e3e9e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.analysis-step {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #9aa29c;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.analysis-step.active {
+    color: #2e7d32;
+}
+
+.analysis-step > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+}
+
+.analysis-line {
+    width: 35px;
+    height: 1px;
+
+    background: #dfe5df;
+
+    margin: 0 8px;
+}
+
+.mini-spinner {
+    width: 15px !important;
+    height: 15px !important;
+
+    border: 2px solid #cfe2d0;
+    border-top-color: #2e7d32;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.detect-info {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.info-item {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.info-item > span {
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.info-item strong {
+    display: block;
+
+    color: #293029;
+
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    margin: 0;
+
+    color: #7a827c;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .detect-page {
+        padding: 45px 18px;
+    }
+
+    .detect-header h1 {
+        font-size: 38px;
+    }
+
+    .detect-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .detect-page {
+        padding: 35px 15px;
+    }
+
+    .detect-header {
+        margin-bottom: 30px;
+    }
+
+    .detect-header h1 {
+        font-size: 32px;
+    }
+
+    .detect-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .detect-badge {
+        font-size: 11px;
+        padding: 7px 13px;
+    }
+
+    .upload-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .upload-title h2 {
+        font-size: 20px;
+    }
+
+    .upload-title p {
+        line-height: 1.5;
+    }
+
+    .drop-zone {
+        min-height: 280px;
+        padding: 20px;
+    }
+
+    .upload-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+    .drop-zone h3 {
+        font-size: 18px;
+    }
+
+    .drop-zone p {
+        font-size: 14px;
+    }
+
+    .preview-image-wrapper {
+        height: 300px;
+    }
+
+    .file-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .file-details strong {
+        max-width: 100%;
+    }
+
+    .change-image {
+        text-align: center;
+    }
+
+    .analyze-button {
+        max-width: 100%;
+    }
+
+    .analyzing-panel {
+        padding: 14px 10px;
+    }
+
+    .analysis-step {
+        font-size: 10px;
+    }
+
+    .analysis-line {
+        width: 18px;
+        margin: 0 4px;
+    }
+
+    .info-item {
+        padding: 17px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .detect-page {
+        padding: 25px 12px;
+    }
+
+    .detect-header h1 {
+        font-size: 28px;
+    }
+
+    .upload-card {
+        padding: 16px;
+    }
+
+    .drop-zone {
+        min-height: 250px;
+    }
+
+    .preview-image-wrapper {
+        height: 250px;
+    }
+
+    .remove-image {
+        width: 34px;
+        height: 34px;
+        font-size: 22px;
+    }
+
+    .analyzing-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .analysis-line {
+        width: 1px;
+        height: 12px;
+        margin-left: 9px;
+    }
+
+}

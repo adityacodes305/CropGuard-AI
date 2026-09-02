@@ -1,0 +1,446 @@
+/* =========================================================
+   CROP GUARD AI - NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e3ebe6;
+
+    box-shadow: 0 3px 18px rgba(25, 60, 39, 0.035);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: #1c2d22;
+
+    font-size: 19px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    letter-spacing: -0.3px;
+
+    transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+    opacity: 0.85;
+}
+
+.navbar-logo strong {
+    color: #217a43;
+}
+
+.navbar-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+
+    background: #edf8f0;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-left: auto;
+    margin-right: 32px;
+}
+
+.navbar-links a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    border-radius: 8px;
+
+    color: #617067;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #217a43;
+    background: #f2f8f4;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 5px 10px 5px 5px;
+
+    border: 1px solid #e1e9e4;
+    border-radius: 10px;
+
+    background: #f9fbfa;
+}
+
+.navbar-user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+
+    background: #217a43;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.navbar-user span {
+    max-width: 125px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #35463b;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.navbar-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    color: #526158;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.navbar-login:hover {
+    color: #217a43;
+    background: #f2f8f4;
+}
+
+
+/* =========================================================
+   GET STARTED
+   ========================================================= */
+
+.navbar-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    background: #217a43;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 14px rgba(33, 122, 67, 0.13);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.navbar-register:hover {
+    transform: translateY(-1px);
+
+    background: #1b6939;
+
+    box-shadow: 0 7px 18px rgba(33, 122, 67, 0.18);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.navbar-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dce6df;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #617067;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-logout:hover {
+    transform: translateY(-1px);
+
+    border-color: #e0b9ad;
+
+    background: #fff7f4;
+    color: #b95538;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .navbar {
+        padding: 0 22px;
+    }
+
+    .navbar-links {
+        margin-right: 18px;
+    }
+
+    .navbar-links a {
+        padding: 0 9px;
+    }
+
+    .navbar-user span {
+        max-width: 90px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+
+        padding: 11px 17px;
+
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 17px;
+    }
+
+    .navbar-logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navbar-right {
+        gap: 7px;
+    }
+
+    .navbar-user {
+        padding-right: 6px;
+    }
+
+    .navbar-user span {
+        display: none;
+    }
+
+    .navbar-user-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .navbar-login,
+    .navbar-register,
+    .navbar-logout {
+        min-height: 37px;
+
+        padding-left: 11px;
+        padding-right: 11px;
+
+        font-size: 12px;
+    }
+
+    .navbar-links {
+        order: 3;
+
+        width: 100%;
+
+        margin: 0;
+
+        justify-content: center;
+
+        overflow-x: auto;
+
+        padding-bottom: 2px;
+    }
+
+    .navbar-links a {
+        flex-shrink: 0;
+
+        min-height: 36px;
+
+        padding: 0 12px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 9px 12px;
+    }
+
+    .navbar-logo {
+        gap: 7px;
+
+        font-size: 15px;
+    }
+
+    .navbar-logo-icon {
+        width: 32px;
+        height: 32px;
+
+        font-size: 17px;
+    }
+
+    .navbar-right {
+        gap: 5px;
+    }
+
+    .navbar-login {
+        display: none;
+    }
+
+    .navbar-register,
+    .navbar-logout {
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    .navbar-links {
+        gap: 2px;
+    }
+
+    .navbar-links a {
+        min-height: 34px;
+
+        padding: 0 9px;
+
+        font-size: 12px;
+    }
+}

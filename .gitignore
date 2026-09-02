@@ -1,0 +1,23 @@
+node_modules/
+.env
+*.log
+
+# Frontend
+frontend/dist/
+frontend/.env
+
+# Backend
+backend/uploads/
+
+# Python
+ai/venv/
+__pycache__/
+*.pyc
+
+# AI training outputs
+ai/runs/
+
+# Dataset
+ai/plantvillage/
+# Prepared AI dataset
+ai/dataset/
