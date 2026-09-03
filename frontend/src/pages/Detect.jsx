@@ -147,7 +147,7 @@ function Detect() {
             formData.append("file", image);
 
             const aiResponse = await fetch(
-                "http://127.0.0.1:8000/predict",
+    "https://cropguard-ai-1-86zc.onrender.com/predict",
                 {
                     method: "POST",
                     body: formData
