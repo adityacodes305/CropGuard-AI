@@ -950,48 +950,54 @@ app.post(
 // MONGODB CONNECTION
 // ===============================
 
-mongoose
-    .connect(process.env.MONGO_URI)
+if (process.env.MONGO_URI) {
+    mongoose
+        .connect(process.env.MONGO_URI)
 
-    .then(() => {
+        .then(() => {
+
+            console.log(
+                "MongoDB connected successfully"
+            );
+
+        })
+
+        .catch((error) => {
+
+            console.error(
+                "MongoDB connection failed:",
+                error.message
+            );
+
+        });
+} else {
+    console.warn("MONGO_URI is not configured");
+}
+
+
+// Vercel invokes the exported app as a serverless function. Local development
+// still uses the HTTP listener when this file is run directly.
+if (require.main === module) {
+    app.listen(5000, async () => {
 
         console.log(
-            "MongoDB connected successfully"
+            "Server running on http://localhost:5000"
         );
 
-    })
+        try {
 
-    .catch((error) => {
+            await setupEmail();
 
-        console.error(
-            "MongoDB connection failed:",
-            error.message
-        );
+        } catch (error) {
+
+            console.error(
+                "Ethereal setup failed:",
+                error.message
+            );
+
+        }
 
     });
+}
 
-
-// ===============================
-// START SERVER
-// ===============================
-
-app.listen(5000, async () => {
-
-    console.log(
-        "Server running on http://localhost:5000"
-    );
-
-    try {
-
-        await setupEmail();
-
-    } catch (error) {
-
-        console.error(
-            "Ethereal setup failed:",
-            error.message
-        );
-
-    }
-
-});
+module.exports = app;
