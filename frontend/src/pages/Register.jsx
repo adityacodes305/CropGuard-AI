@@ -23,7 +23,7 @@ function Register() {
             setLoading(true);
 
             const response = await fetch(
-                "http://localhost:5000/api/register",
+                "https://cropguard-ai-v5zv.onrender.com/api/register",
                 {
                     method: "POST",
                     headers: {

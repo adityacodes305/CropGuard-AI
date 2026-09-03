@@ -222,7 +222,7 @@ function Detect() {
              * Save result in MongoDB
              */
             const response = await fetch(
-                "http://localhost:5000/api/detections",
+                "https://cropguard-ai-v5zv.onrender.com/api/detections",
                 {
                     method: "POST",
 

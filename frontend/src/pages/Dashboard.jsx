@@ -30,7 +30,7 @@ function Dashboard() {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/detections",
+                "https://cropguard-ai-v5zv.onrender.com/api/detections",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

@@ -31,7 +31,7 @@ function History() {
             return;
         }
 
-        fetch("http://localhost:5000/api/detections", {
+        fetch("https://cropguard-ai-v5zv.onrender.com/api/detections", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -377,7 +377,7 @@ function History() {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/detections/${id}`,
+                `https://cropguard-ai-v5zv.onrender.com/api/detections/${id}`,
                 {
                     method: "DELETE",
                     headers: {
